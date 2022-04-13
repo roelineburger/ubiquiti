@@ -1,6 +1,5 @@
 import express from "express";
 import deviceRouter from "./devices.js";
-import iconRouter from "./icons.js";
 import cors from "cors";
 
 const port = process.env.PORT || 4000;
@@ -14,4 +13,3 @@ app.listen(port, () => {
 });
 
 app.use("/devices", deviceRouter);
-app.use("/icons", iconRouter);

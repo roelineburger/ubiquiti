@@ -1,42 +1,62 @@
-import React, { useRef, useState } from "react";
-import SearchBar from "material-ui-search-bar";
+import React, { useState, useEffect, useMemo } from "react";
 import FormatListBulletedIcon from "@mui/icons-material/FormatListBulleted";
+import SearchIcon from "@material-ui/icons/Search";
+import CloseIcon from "@material-ui/icons/Close";
 import GridViewIcon from "@mui/icons-material/GridView";
 import CardList from "./CardList";
 import ProductList from "./ProductList";
 
-const Toolbar = ({ devices }) => {
+const Toolbar = () => {
   const [view, setView] = useState("list");
-  const [searchField, setSearchField] = useState("");
+  const [devices, setDevices] = useState<any[]>([]);
+  const [icons, setIcons] = useState(null);
+  const [searchTerm, setSearchTerm] = useState("");
+
+  useEffect(() => {
+    const getDevices = async () => {
+      const query = await fetch("http://localhost:4000/devices");
+      const json = await query.json();
+      setDevices(json.devices);
+    };
+    getDevices();
+  }, []);
 
   const switchView = () => {
-    console.log("click");
     if (view === "list") {
-      console.log("card");
       setView("card");
     } else {
       setView("list");
-      console.log("list");
     }
   };
 
-  const filteredDevices = devices.filter((devices) => {
-    return devices.product.name;
-  });
-
-  const startSearch = (e: any) => {
-    console.log("search");
-  };
+  const filteredDevices = useMemo(() => {
+    return devices.filter((device) => {
+      return (
+        device.line.name.toLowerCase().indexOf(searchTerm.toLowerCase()) > -1 ||
+        device.product.name.toLowerCase().indexOf(searchTerm.toLowerCase()) > -1
+      );
+    });
+  }, [devices, searchTerm]);
 
   return (
     <div className="main">
       <div className="search">
-        <SearchBar onChange={startSearch} style={{ maxWidth: 400 }} />
-        <FormatListBulletedIcon onClick={switchView} />
-        {view === "card" && <CardList />}
-        <GridViewIcon onClick={switchView} />
-        {view === "list" && <ProductList />}
+        <input
+          type="text"
+          placeholder="Search"
+          onChange={(event) => {
+            setSearchTerm(event.target.value);
+          }}
+        />
+        <div className="searchIcon">
+          <SearchIcon />
+          <CloseIcon id="clearBtn" />
+        </div>
         <h3>Filter</h3>
+        <FormatListBulletedIcon onClick={switchView} />
+        {view === "card" && <CardList devices={filteredDevices} />}
+        <GridViewIcon onClick={switchView} />
+        {view === "list" && <ProductList devices={filteredDevices} />}
       </div>
     </div>
   );

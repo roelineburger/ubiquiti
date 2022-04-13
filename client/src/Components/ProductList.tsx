@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState, useEffect } from "react";
 import Table from "@material-ui/core/Table";
 import TableBody from "@material-ui/core/TableBody";
 import TableCell from "@material-ui/core/TableCell";
@@ -7,18 +7,7 @@ import TableHead from "@material-ui/core/TableHead";
 import TableRow from "@material-ui/core/TableRow";
 import Paper from "@material-ui/core/Paper";
 
-const ProductList = () => {
-  const [devices, setDevices] = useState<any[]>([]);
-
-  useEffect(() => {
-    const getDevices = async () => {
-      const query = await fetch("http://localhost:4000/devices");
-      const json = await query.json();
-      setDevices(json.devices);
-    };
-    getDevices();
-  }, []);
-
+const ProductList = ({ devices }: any) => {
   return (
     <div>
       <TableContainer component={Paper}>
@@ -31,15 +20,18 @@ const ProductList = () => {
             </TableRow>
           </TableHead>
           <TableBody>
-            {devices.map((device, i) => (
-              <TableRow>
-                <TableCell align="right" key={i}>
-                  {device.icon.resolutions[0]}
-                </TableCell>
-                <TableCell align="right">{device.line.name}</TableCell>
-                <TableCell align="right">{device.product.name}</TableCell>
-              </TableRow>
-            ))}
+            {devices &&
+              devices.map((device: any, i: any) => (
+                <TableRow>
+                  <TableCell align="right" key={i}>
+                    <img
+                      src={`https://static.ui.com/fingerprint/ui/icons/${device.icon.id}_51x51.png`}
+                    />
+                  </TableCell>
+                  <TableCell align="right">{device.line.name}</TableCell>
+                  <TableCell align="right">{device.product.name}</TableCell>
+                </TableRow>
+              ))}
           </TableBody>
         </Table>
       </TableContainer>

@@ -5,40 +5,18 @@ import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
 import { CardActionArea } from "@mui/material";
 
-const CardList = () => {
-  const [devices, setDevices] = useState<any[]>([]);
-  const [icons, setIcons] = useState<any[]>([]);
-
-  useEffect(() => {
-    const getDevices = async () => {
-      const query = await fetch("http://localhost:4000/devices");
-      const json = await query.json();
-      setDevices(json.devices);
-    };
-    getDevices();
-  }, []);
-
-  useEffect(() => {
-    const getIcons = async () => {
-      const query = await fetch("http://localhost:4000/icons");
-      const json = await query.json();
-      setIcons(json.devices);
-      console.log("loop");
-    };
-    getIcons();
-  }, []);
-
+const CardList = ({ devices }: any) => {
+  console.log(devices[0].icon.id);
   return (
     <Card sx={{ maxWidth: 345 }}>
       <CardActionArea>
         <CardMedia
           component="img"
           height="140"
-          image=" https://static.ui.com/fingerprint/ui/icons/06a25b40-ef1f-463a-82d9-13236866ea3d_257x257.png
-          "
+          image={`https://static.ui.com/fingerprint/ui/icons/${devices.icon.id}_51x51.png`}
           alt="product-icon"
         />
-        {devices.map((device, i) => (
+        {devices.map((device: any, i: any) => (
           <CardContent>
             <Typography gutterBottom variant="h5" component="div">
               {device.product.name}
