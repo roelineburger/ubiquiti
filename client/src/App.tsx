@@ -1,21 +1,33 @@
 import React, { useState, useEffect } from "react";
 import "./App.css";
 import Header from "./Components/Header";
-import Toolbar from "./Components/Toolbar";
-import { Routes, Route } from "react-router-dom";
-//import DetailsContainer from "./Containers/DetailsContainer";
-import ProductList from "./Components/ProductList";
-import CardList from "./Components/CardList";
+import { Routes, Route, BrowserRouter } from "react-router-dom";
+import ProductContainer from "./Components/ProductContainer";
+import Device from "./Components/Device";
 
 const App = () => {
+  const [devices, setDevices] = useState<any[]>([]);
+  console.log("loading");
+
+  useEffect(() => {
+    const getDevices = async () => {
+      console.log("in here");
+      const query = await fetch("http://localhost:4000/devices");
+      const json = await query.json();
+      setDevices(json.devices);
+    };
+    getDevices();
+  }, []);
+
   return (
     <div className="App">
       <Header />
-      <Toolbar />
-      <Routes>
-        <Route path="/list" element={<ProductList />} />
-        <Route path="/card" element={<CardList />} />
-      </Routes>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<ProductContainer devices={devices} />} />
+          <Route path="/device" element={<Device />} />
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 };

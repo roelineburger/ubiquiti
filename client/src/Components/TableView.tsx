@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import Table from "@material-ui/core/Table";
 import TableBody from "@material-ui/core/TableBody";
 import TableCell from "@material-ui/core/TableCell";
@@ -7,7 +7,7 @@ import TableHead from "@material-ui/core/TableHead";
 import TableRow from "@material-ui/core/TableRow";
 import Paper from "@material-ui/core/Paper";
 
-const ProductList = ({ devices }: any) => {
+const TableView = ({ filteredDevices }: any) => {
   return (
     <div>
       <TableContainer component={Paper}>
@@ -20,8 +20,8 @@ const ProductList = ({ devices }: any) => {
             </TableRow>
           </TableHead>
           <TableBody>
-            {devices &&
-              devices.map((device: any, i: any) => (
+            {filteredDevices &&
+              filteredDevices.map((device: any, i: any) => (
                 <TableRow>
                   <TableCell align="right" key={i}>
                     <img
@@ -39,4 +39,4 @@ const ProductList = ({ devices }: any) => {
   );
 };
 
-export default ProductList;
+export default TableView;
