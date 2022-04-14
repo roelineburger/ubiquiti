@@ -1,4 +1,6 @@
 import React from "react";
+import TableViewItem from "./TableViewItem";
+import { Link } from "react-router-dom";
 import Table from "@material-ui/core/Table";
 import TableBody from "@material-ui/core/TableBody";
 import TableCell from "@material-ui/core/TableCell";
@@ -22,15 +24,7 @@ const TableView = ({ filteredDevices }: any) => {
           <TableBody>
             {filteredDevices &&
               filteredDevices.map((device: any, i: any) => (
-                <TableRow>
-                  <TableCell align="right" key={i}>
-                    <img
-                      src={`https://static.ui.com/fingerprint/ui/icons/${device.icon.id}_51x51.png`}
-                    />
-                  </TableCell>
-                  <TableCell align="right">{device.line.name}</TableCell>
-                  <TableCell align="right">{device.product.name}</TableCell>
-                </TableRow>
+                <TableViewItem device={device} />
               ))}
           </TableBody>
         </Table>

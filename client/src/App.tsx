@@ -7,11 +7,9 @@ import Device from "./Components/Device";
 
 const App = () => {
   const [devices, setDevices] = useState<any[]>([]);
-  console.log("loading");
 
   useEffect(() => {
     const getDevices = async () => {
-      console.log("in here");
       const query = await fetch("http://localhost:4000/devices");
       const json = await query.json();
       setDevices(json.devices);
@@ -25,7 +23,7 @@ const App = () => {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<ProductContainer devices={devices} />} />
-          <Route path="/device" element={<Device />} />
+          <Route path="/device/:id" element={<Device devices={devices} />} />
         </Routes>
       </BrowserRouter>
     </div>
