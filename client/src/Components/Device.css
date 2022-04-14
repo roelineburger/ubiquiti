@@ -1,0 +1,42 @@
+.device-header {
+  border-bottom: solid var(--Neutral3) 1px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 38px;
+  color: var(--Neutral8);
+}
+
+.device-content {
+  width: 320px;
+}
+
+.device-row {
+  display: flex;
+  border-bottom: solid var(--Neutral3) 1px;
+}
+
+.device-image {
+  width: 257px;
+  height: 257px;
+}
+
+.device-container {
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+.device-feature-name {
+  color: var(--Neutral8);
+  font-weight: 400;
+  font-size: 14px;
+  margin-right: auto;
+}
+
+.device-feature-info {
+  color: var(--Neutral8);
+  font-weight: 400;
+  font-size: 14px;
+}

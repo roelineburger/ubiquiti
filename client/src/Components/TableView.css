@@ -1,0 +1,38 @@
+:root {
+  --Neutral2: #f6f6f8;
+  --Neutral8: #838691;
+  --Neutral3: #ededf0;
+}
+
+.product-table-header {
+  font-weight: 400;
+  display: flex;
+  font-size: 12px;
+  font-weight: bold;
+  align-items: baseline;
+  border-bottom: solid 1px var(--Neutral3);
+  height: 100%;
+
+  color: var(--Neutral8);
+}
+
+.product-table-total {
+  font-weight: 400;
+  font-size: 12px;
+  width: 185px;
+  margin-left: 30px;
+}
+
+.product-table-line {
+  margin-right: 152px;
+  width: 110px;
+}
+
+.product-table-name {
+  margin-right: 152px;
+  width: 250px;
+}
+
+.product-table-data {
+  margin: 0 32px 0 32px;
+}

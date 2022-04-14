@@ -1,0 +1,28 @@
+:root {
+  --Neutral2: #f6f6f8;
+  --Neutral8: #838691;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--Neutral2);
+  color: var(--Neutral8);
+}
+
+.header-logo {
+  margin-right: 15px;
+}
+
+.header-devices {
+  font-weight: 400;
+  margin-right: auto;
+  font-size: 19px;
+}
+
+.header-author {
+  font-weight: 400;
+  font-size: 14px;
+  margin-right: 32px;
+}

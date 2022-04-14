@@ -1,34 +1,26 @@
 import React from "react";
 import TableViewItem from "./TableViewItem";
 import { Link } from "react-router-dom";
-import Table from "@material-ui/core/Table";
-import TableBody from "@material-ui/core/TableBody";
-import TableCell from "@material-ui/core/TableCell";
-import TableContainer from "@material-ui/core/TableContainer";
-import TableHead from "@material-ui/core/TableHead";
-import TableRow from "@material-ui/core/TableRow";
-import Paper from "@material-ui/core/Paper";
+import "./TableView.css";
 
 const TableView = ({ filteredDevices }: any) => {
   return (
     <div>
-      <TableContainer component={Paper}>
-        <Table aria-label="products-table">
-          <TableHead>
-            <TableRow>
-              <TableCell>123 devices</TableCell>
-              <TableCell align="right">PRODUCT LINE</TableCell>
-              <TableCell align="right">NAME</TableCell>
-            </TableRow>
-          </TableHead>
-          <TableBody>
+      <div className="product-table">
+        <div className="product-table-header">
+          <h3 className="product-table-total">123 devices</h3>
+          <h3 className="product-table-line">PRODUCT LINE</h3>
+          <h3 className="product-table-name">NAME</h3>
+        </div>
+        <div>
+          <div className="product-table-data">
             {filteredDevices &&
               filteredDevices.map((device: any, i: any) => (
                 <TableViewItem device={device} />
               ))}
-          </TableBody>
-        </Table>
-      </TableContainer>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };

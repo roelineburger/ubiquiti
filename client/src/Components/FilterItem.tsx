@@ -1,4 +1,5 @@
 import React from "react";
+import "./FilterItem.css";
 
 const FilterItem = ({
   selectedProductLines,

@@ -1,5 +1,6 @@
 import React, { useMemo } from "react";
 import FilterItem from "./FilterItem";
+import "./Filter.css";
 
 const Filter = ({
   devices,

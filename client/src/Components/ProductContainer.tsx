@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useMemo } from "react";
+import "./ProductContainer.css";
 import Toolbar from "./Toolbar";
 import TableView from "./TableView";
 import CardView from "./CardView";
