@@ -3,8 +3,13 @@ import "./ProductContainer.css";
 import Toolbar from "./Toolbar";
 import TableView from "./TableView";
 import CardView from "./CardView";
+import { Device } from "../Interfaces";
 
-const ProductList = ({ devices }: any) => {
+interface ProductListProps {
+  devices: Device[];
+}
+
+const ProductList = ({ devices }: ProductListProps) => {
   const [view, setView] = useState("list");
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedProductLines, setSelectedProductLines] = useState<string[]>(
@@ -20,7 +25,7 @@ const ProductList = ({ devices }: any) => {
   };
 
   const filteredDevices = useMemo(() => {
-    return devices.filter((device: any) => {
+    return devices.filter((device) => {
       if (
         selectedProductLines.length > 0 &&
         selectedProductLines.indexOf(device.line.name) === -1
@@ -43,10 +48,8 @@ const ProductList = ({ devices }: any) => {
         setSelectedProductLines={setSelectedProductLines}
         selectedProductLines={selectedProductLines}
       />
-      {view === "list" && (
-        <TableView filteredDevices={filteredDevices} devices={devices} />
-      )}
-      {view === "card" && <CardView devices={devices} />}
+      {view === "list" && <TableView filteredDevices={filteredDevices} />}
+      {view === "card" && <CardView filteredDevices={filteredDevices} />}
     </div>
   );
 };

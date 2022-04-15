@@ -1,10 +1,13 @@
 import React from "react";
 import "./TableViewItem.css";
 import { Link } from "react-router-dom";
-import TableCell from "@material-ui/core/TableCell";
-import TableRow from "@material-ui/core/TableRow";
+import { Device } from "../Interfaces";
 
-const TableViewItem = ({ device }: any) => {
+interface TableViewItemProps {
+  device: Device;
+}
+
+const TableViewItem = ({ device }: TableViewItemProps) => {
   return (
     <Link to={`/device/${device.icon.id}`}>
       <div className="tableview">

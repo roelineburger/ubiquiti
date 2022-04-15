@@ -1,10 +1,20 @@
 import React, { useState, useMemo } from "react";
 import "./Toolbar.css";
-import Filter from "./Filter";
+import FilterPopUp from "./FilterPopUp";
 import FormatListBulletedIcon from "@mui/icons-material/FormatListBulleted";
 import SearchIcon from "@material-ui/icons/Search";
 import CloseIcon from "@material-ui/icons/Close";
 import GridViewIcon from "@mui/icons-material/GridView";
+import { Device } from "../Interfaces";
+
+interface ToolbarProps {
+  setSearchTerm: (newSearchTerm: string) => void;
+  searchTerm: string;
+  switchView: () => void;
+  devices: Device[];
+  setSelectedProductLines: (newSelectedProductLines: string[]) => void;
+  selectedProductLines: string[];
+}
 
 const Toolbar = ({
   setSearchTerm,
@@ -13,38 +23,37 @@ const Toolbar = ({
   devices,
   setSelectedProductLines,
   selectedProductLines,
-}: any) => {
+}: ToolbarProps) => {
   return (
     <div className="toolbar">
       <div className="search">
-        <div className="toolbar-searchIcon">
-          {" "}
-          <SearchIcon />
+        <div className="search-inner">
+          <div className="search-icon">
+            <SearchIcon />
+          </div>
+          <input
+            className="search-input"
+            type="text"
+            placeholder="Search"
+            onChange={(e) => setSearchTerm(e.target.value)}
+            value={searchTerm}
+          />
+          <div className="search-clear">
+            <CloseIcon />
+          </div>
         </div>
-
-        <input
-          className="toolbar-search"
-          type="text"
-          placeholder="Search"
-          onChange={(e) => setSearchTerm(e.target.value)}
-          value={searchTerm}
-        />
-        <div className="toolbar-clearBtn">
-          <CloseIcon />
-        </div>
+      </div>
+      <div className="toolbar-toggle">
         <FormatListBulletedIcon
           className="toolbar-list-icon"
           onClick={switchView}
         />
         <GridViewIcon className="toolbar-grid-icon" onClick={switchView} />
-        <h3 className="toolbar-filter-text">
-          Filter
-          {/* <Filter
-            devices={devices}
-            setSelectedProductLines={setSelectedProductLines}
-            selectedProductLines={selectedProductLines}
-          /> */}
-        </h3>
+        <FilterPopUp
+          devices={devices}
+          setSelectedProductLines={setSelectedProductLines}
+          selectedProductLines={selectedProductLines}
+        />
       </div>
     </div>
   );

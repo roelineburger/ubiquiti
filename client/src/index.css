@@ -7,11 +7,6 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   box-sizing: content-box;
-  /* background-image: url("./Assets/1.png");
-  background-position-x: -2px;
-  background-position-y: -4px;
-  background-size: contain;
-  opacity: 0.5; */
 }
 
 code {

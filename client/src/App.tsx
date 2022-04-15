@@ -3,10 +3,11 @@ import "./App.css";
 import Header from "./Components/Header";
 import { Routes, Route, BrowserRouter } from "react-router-dom";
 import ProductContainer from "./Components/ProductContainer";
-import Device from "./Components/Device";
+import DeviceDetails from "./Components/DeviceDetails";
+import { Device } from "./Interfaces";
 
 const App = () => {
-  const [devices, setDevices] = useState<any[]>([]);
+  const [devices, setDevices] = useState<Device[]>([]);
 
   useEffect(() => {
     const getDevices = async () => {
@@ -19,11 +20,14 @@ const App = () => {
 
   return (
     <div className="App">
-      <Header />
       <BrowserRouter>
+        <Header />
         <Routes>
           <Route path="/" element={<ProductContainer devices={devices} />} />
-          <Route path="/device/:id" element={<Device devices={devices} />} />
+          <Route
+            path="/device/:id"
+            element={<DeviceDetails devices={devices} />}
+          />
         </Routes>
       </BrowserRouter>
     </div>

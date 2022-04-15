@@ -2,8 +2,13 @@ import React from "react";
 import TableViewItem from "./TableViewItem";
 import { Link } from "react-router-dom";
 import "./TableView.css";
+import { Device } from "../Interfaces";
 
-const TableView = ({ filteredDevices }: any) => {
+interface TableViewProps {
+  filteredDevices: Device[];
+}
+
+const TableView = ({ filteredDevices }: TableViewProps) => {
   return (
     <div>
       <div className="product-table">
@@ -15,8 +20,8 @@ const TableView = ({ filteredDevices }: any) => {
         <div>
           <div className="product-table-data">
             {filteredDevices &&
-              filteredDevices.map((device: any, i: any) => (
-                <TableViewItem device={device} />
+              filteredDevices.map((device, i) => (
+                <TableViewItem device={device} key={device.icon.id + i} />
               ))}
           </div>
         </div>

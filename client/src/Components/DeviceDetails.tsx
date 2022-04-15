@@ -1,12 +1,17 @@
 import React, { useMemo } from "react";
 import { useParams } from "react-router-dom";
-import "./Device.css";
+import "./DeviceDetails.css";
+import { Device } from "../Interfaces";
 
-const Device = ({ devices }: any) => {
+interface DeviceProps {
+  devices: Device[];
+}
+
+const DeviceDetails = ({ devices }: DeviceProps) => {
   let { id } = useParams();
 
   const device = useMemo(() => {
-    const oneDevice = devices.find((device: any) => device.icon.id === id);
+    const oneDevice = devices.find((device) => device.icon.id === id);
     return oneDevice;
   }, [devices, id]);
 
@@ -79,4 +84,4 @@ const Device = ({ devices }: any) => {
   );
 };
 
-export default Device;
+export default DeviceDetails;

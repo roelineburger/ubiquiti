@@ -7,37 +7,45 @@
 
 .toolbar {
   border-bottom: solid var(--Neutral3) 1px;
+  position: relative;
+  z-index: 1;
+  display: flex;
 }
 
 .search {
+  margin-right: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-left: 30px;
+}
+
+.search-inner {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 38px;
-  color: var(--Neutral8);
-}
-
-.toolbar-search {
+  background-color: var(--Neutral2);
+  padding: 0 8px;
   border-radius: 4px;
-  width: 320px;
-  height: 25px;
-  align-items: left;
-  background-color: var(--Neutral2);
+  box-shadow: 0 5px 4px -4px rgba(0, 0, 0, 0.2);
+}
+
+.search-input {
   border: none;
+  background-color: transparent;
+  padding: 8px 5px 7px 5px;
+  width: 270px;
 }
 
-.toolbar-searchIcon {
+.search-icon {
   color: var(--Neutral8);
-  margin-left: 30px;
-  background-color: var(--Neutral2);
-  height: 26px;
+  margin-top: 5px;
 }
 
-.toolbar-clearBtn {
-  margin-right: auto;
+.search-clear {
   color: var(--Neutral8);
-  height: 25px;
-  background-color: var(--Neutral2);
+  margin-top: 3px;
 }
 
 .toolbar-list-icon {
@@ -47,16 +55,62 @@
 .toolbar-grid-icon {
   color: var(--Neutral8);
   margin-left: 18px;
+  margin-right: 8px;
 }
 
 .toolbar-filter-text {
   color: var(--Neutral8);
   font-weight: 400;
   font-size: 14px;
+  margin-left: 14px;
   margin-right: 32px;
-  margin-left: 18px;
+  position: relative;
 }
 
 svg.MuiSvgIcon-root {
-  font-size: 1.4rem;
+  font-size: 1rem;
+}
+
+svg.MuiSvgIcon-root :hover {
+  color: red;
+}
+
+.toolbar-filter-popup {
+  background-color: white;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  width: 200px;
+  font-size: 14px;
+  display: block;
+  flex-direction: column;
+  position: absolute;
+  top: 0;
+  right: 0;
+  color: var(--Neutral8);
+}
+
+.toolbar-filter-popup-filter {
+  padding-right: 100px;
+  color: var(--Neutral8);
+  font-weight: 400;
+  font-size: 14px;
+  border-bottom: solid var(--Neutral3) 1px;
+  padding: 0 15px 6px 15px;
+}
+
+.toolbar-filter-popup-productline {
+  color: var(--Neutral8);
+  font-weight: bold;
+  font-size: 14px;
+  padding: 2px 15px;
+}
+
+.toolbar-filter-popup-x {
+  position: absolute;
+  right: 0;
+}
+
+.toolbar-toggle {
+  display: flex;
+  position: relative;
+  align-items: center;
 }

@@ -12,8 +12,10 @@
   align-items: baseline;
   border-bottom: solid 1px var(--Neutral3);
   height: 100%;
-
   color: var(--Neutral8);
+  position: sticky;
+  top: 0;
+  background-color: white;
 }
 
 .product-table-total {
