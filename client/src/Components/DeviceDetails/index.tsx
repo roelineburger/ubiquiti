@@ -1,8 +1,8 @@
 import React, { useMemo } from "react";
 import { useParams } from "react-router-dom";
 import ArrowBackIcon from "@mui/icons-material/ArrowBackIos";
-import "./DeviceDetails.css";
-import { Device } from "../Interfaces";
+import "./styles.css";
+import { Device } from "../../Interfaces";
 
 import { Link } from "react-router-dom";
 

@@ -1,7 +1,7 @@
 import React from "react";
-import logo from "../Assets/Ubiquiti_logo.png";
+import logo from "./Ubiquiti_logo.png";
 import { Link } from "react-router-dom";
-import "./Header.css";
+import "./styles.css";
 
 const Header = () => {
   return (

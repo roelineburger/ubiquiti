@@ -1,9 +1,9 @@
 import React, { useState, useEffect, useMemo } from "react";
-import "./ProductContainer.css";
-import Toolbar from "./Toolbar";
-import TableView from "./TableView";
-import CardView from "./CardView";
-import { Device } from "../Interfaces";
+import "./styles.css";
+import Toolbar from "../Toolbar";
+import TableView from "../TableView";
+import CardView from "../CardView";
+import { Device } from "../../Interfaces";
 
 interface ProductListProps {
   devices: Device[];

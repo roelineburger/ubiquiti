@@ -1,7 +1,7 @@
 import React from "react";
-import "./TableViewItem.css";
+import "./styles.css";
 import { Link } from "react-router-dom";
-import { Device } from "../Interfaces";
+import { Device } from "../../Interfaces";
 
 interface TableViewItemProps {
   device: Device;

@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import Filter from "./Filter";
+import Filter from "../Filter";
 import CloseIcon from "@material-ui/icons/Close";
-import { Device } from "../Interfaces";
-import "./FilterPopUp.css";
+import { Device } from "../../Interfaces";
+import "./styles.css";
 
 interface FilterPopUpProps {
   devices: Device[];

@@ -1,8 +1,7 @@
 import React from "react";
-import TableViewItem from "./TableViewItem";
-import { Link } from "react-router-dom";
-import "./TableView.css";
-import { Device } from "../Interfaces";
+import TableViewItem from "../TableViewItem";
+import "./styles.css";
+import { Device } from "../../Interfaces";
 
 interface TableViewProps {
   filteredDevices: Device[];

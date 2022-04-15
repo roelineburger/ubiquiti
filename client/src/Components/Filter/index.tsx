@@ -1,7 +1,7 @@
 import React, { useMemo } from "react";
-import FilterItem from "./FilterItem";
-import "./Filter.css";
-import { Device } from "../Interfaces";
+import FilterItem from "../FilterItem";
+import "./styles.css";
+import { Device } from "../../Interfaces";
 
 interface FilterProps {
   devices: Device[];

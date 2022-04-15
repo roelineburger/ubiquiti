@@ -1,5 +1,5 @@
 import React from "react";
-import "./FilterItem.css";
+import "./styles.css";
 
 interface FilterItemProps {
   productLine: string;

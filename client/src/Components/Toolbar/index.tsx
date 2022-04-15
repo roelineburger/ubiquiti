@@ -1,11 +1,11 @@
 import React, { useState, useMemo } from "react";
-import "./Toolbar.css";
-import FilterPopUp from "./FilterPopUp";
+import "./styles.css";
+import FilterPopUp from "../FilterPopUp";
 import FormatListBulletedIcon from "@mui/icons-material/FormatListBulleted";
 import SearchIcon from "@material-ui/icons/Search";
 import CloseIcon from "@material-ui/icons/Close";
 import GridViewIcon from "@mui/icons-material/GridView";
-import { Device } from "../Interfaces";
+import { Device } from "../../Interfaces";
 
 interface ToolbarProps {
   setSearchTerm: (newSearchTerm: string) => void;
