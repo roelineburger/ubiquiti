@@ -10,7 +10,7 @@ interface CardViewProps {
 const CardView = ({ filteredDevices }: CardViewProps) => {
   return (
     <div className="cards-container">
-      <p className="device-total">123 devices</p>
+      <p className="device-total">{filteredDevices.length} devices</p>
       {filteredDevices.map((device, i) => (
         <div className="card" key={device.icon.id + i}>
           <Link to={`/device/${device.icon.id}`}>

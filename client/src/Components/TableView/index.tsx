@@ -12,7 +12,9 @@ const TableView = ({ filteredDevices }: TableViewProps) => {
     <div>
       <div className="product-table">
         <div className="product-table-header">
-          <h3 className="product-table-total">123 devices</h3>
+          <h3 className="product-table-total">
+            {filteredDevices.length} devices
+          </h3>
           <h3 className="product-table-line">PRODUCT LINE</h3>
           <h3 className="product-table-name">NAME</h3>
         </div>

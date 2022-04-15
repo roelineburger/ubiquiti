@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import "./App.css";
 import Header from "./Components/Header";
 import { Routes, Route, BrowserRouter } from "react-router-dom";
-import ProductContainer from "./Components/ProductContainer";
+import DeviceList from "./Components/DeviceList";
 import DeviceDetails from "./Components/DeviceDetails";
 import { Device } from "./Interfaces";
 
@@ -23,7 +23,7 @@ const App = () => {
       <BrowserRouter>
         <Header />
         <Routes>
-          <Route path="/" element={<ProductContainer devices={devices} />} />
+          <Route path="/" element={<DeviceList devices={devices} />} />
           <Route
             path="/device/:id"
             element={<DeviceDetails devices={devices} />}

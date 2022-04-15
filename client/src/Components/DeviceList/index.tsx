@@ -1,17 +1,33 @@
 import React, { useState, useEffect, useMemo } from "react";
+import { useSearchParams } from "react-router-dom";
 import "./styles.css";
 import Toolbar from "../Toolbar";
 import TableView from "../TableView";
 import CardView from "../CardView";
 import { Device } from "../../Interfaces";
 
-interface ProductListProps {
+interface DeviceListProps {
   devices: Device[];
 }
 
-const ProductList = ({ devices }: ProductListProps) => {
-  const [view, setView] = useState("list");
-  const [searchTerm, setSearchTerm] = useState("");
+const DeviceList = ({ devices }: DeviceListProps) => {
+  const [searchParams, setSearchParams] = useSearchParams();
+  const [view, setView] = useState(() => {
+    const initialView = searchParams.get("view");
+    if (initialView === "list" || initialView === "card") {
+      return initialView;
+    }
+    return "list";
+  });
+
+  const [searchTerm, setSearchTerm] = useState(() => {
+    return searchParams.get("query") || "";
+  });
+
+  useEffect(() => {
+    setSearchParams({ view, query: searchTerm });
+  }, [view, setSearchParams, searchTerm]);
+
   const [selectedProductLines, setSelectedProductLines] = useState<string[]>(
     []
   );
@@ -54,4 +70,4 @@ const ProductList = ({ devices }: ProductListProps) => {
   );
 };
 
-export default ProductList;
+export default DeviceList;
