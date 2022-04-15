@@ -1,7 +1,10 @@
 import React, { useMemo } from "react";
 import { useParams } from "react-router-dom";
+import ArrowBackIcon from "@mui/icons-material/ArrowBackIos";
 import "./DeviceDetails.css";
 import { Device } from "../Interfaces";
+
+import { Link } from "react-router-dom";
 
 interface DeviceProps {
   devices: Device[];
@@ -19,7 +22,12 @@ const DeviceDetails = ({ devices }: DeviceProps) => {
     <div>
       {device && (
         <div>
-          <header className="device-header">{device.product.name}</header>
+          <div className="device">
+            <Link to="/">
+              <ArrowBackIcon className="back-icon" />
+            </Link>
+            <header className="device-header">{device.product.name}</header>
+          </div>
           <div className="device-container">
             <img
               className="device-image"

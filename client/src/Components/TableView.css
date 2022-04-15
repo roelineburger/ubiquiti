@@ -9,20 +9,20 @@
   display: flex;
   font-size: 12px;
   font-weight: bold;
-  align-items: baseline;
   border-bottom: solid 1px var(--Neutral3);
   height: 100%;
   color: var(--Neutral8);
   position: sticky;
   top: 0;
   background-color: white;
+  align-items: baseline;
 }
 
 .product-table-total {
   font-weight: 400;
   font-size: 12px;
-  width: 185px;
-  margin-left: 30px;
+  margin-left: 125px;
+  margin-right: 30px;
 }
 
 .product-table-line {

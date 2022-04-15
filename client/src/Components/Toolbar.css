@@ -53,13 +53,13 @@
 .toolbar-list-icon {
   color: var(--Neutral8);
   cursor: pointer;
+  padding: 10px;
 }
 
 .toolbar-grid-icon {
   color: var(--Neutral8);
-  margin-left: 18px;
-  margin-right: 8px;
   cursor: pointer;
+  padding: 10px;
 }
 
 .toolbar-filter-text {

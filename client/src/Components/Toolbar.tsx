@@ -24,6 +24,10 @@ const Toolbar = ({
   setSelectedProductLines,
   selectedProductLines,
 }: ToolbarProps) => {
+  const clearSearch = () => {
+    setSearchTerm("");
+  };
+
   return (
     <div className="toolbar">
       <div className="search">
@@ -39,7 +43,7 @@ const Toolbar = ({
             value={searchTerm}
           />
           <div className="search-clear">
-            <CloseIcon />
+            <CloseIcon onClick={clearSearch} />
           </div>
         </div>
       </div>

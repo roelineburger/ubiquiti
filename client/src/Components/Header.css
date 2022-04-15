@@ -9,6 +9,7 @@
   justify-content: center;
   background-color: var(--Neutral2);
   color: var(--Neutral8);
+  height: 53px;
 }
 
 .header-logo {

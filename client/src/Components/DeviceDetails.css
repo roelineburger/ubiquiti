@@ -1,14 +1,31 @@
+.device {
+  position: relative;
+  width: 100%;
+}
+
 .device-header {
   border-bottom: solid var(--Neutral3) 1px;
   display: flex;
-  align-items: center;
   justify-content: center;
-  height: 38px;
+  height: 40px;
   color: var(--Neutral8);
+  max-height: 40px;
+  align-items: center;
+}
+.back-icon {
+  color: var(--Neutral8);
+  padding-left: 50px;
+  max-height: 15px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  position: absolute;
+  top: 30%;
 }
 
 .device-content {
   width: 320px;
+  line-height: 2;
 }
 
 .device-row {
