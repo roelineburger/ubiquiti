@@ -1,3 +1,7 @@
 .toolbar-filter-text {
   cursor: pointer;
 }
+
+.toolbar-filter-text:hover {
+  color: #006fff;
+}
