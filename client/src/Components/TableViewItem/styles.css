@@ -33,3 +33,20 @@
 a:link {
   text-decoration: none;
 }
+
+@media screen and (max-width: 600px) {
+  .tableview-device-img {
+    margin-left: 16px;
+    padding-left: 0;
+  }
+  .tableview-device-line {
+    width: 100px;
+    margin-right: 20px;
+  }
+  .tableview-device-name {
+    width: 100px;
+  }
+  .tableview-device {
+    width: 80px;
+  }
+}

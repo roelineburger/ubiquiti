@@ -61,3 +61,17 @@
   font-weight: 400;
   font-size: 14px;
 }
+
+@media screen and (max-width: 600px) {
+  .device-container {
+    flex-direction: column;
+  }
+  .device-image {
+    width: 100px;
+    height: 100px;
+  }
+
+  .back-icon {
+    padding-left: 16px;
+  }
+}

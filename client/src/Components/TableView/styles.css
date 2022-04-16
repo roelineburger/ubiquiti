@@ -32,9 +32,26 @@
 
 .product-table-name {
   margin-right: 152px;
-  width: 250px;
+  width: 300px;
 }
 
 .product-table-data {
   margin: 0 32px 0 32px;
+}
+
+@media screen and (max-width: 600px) {
+  .product-table-total {
+    margin-left: 16px;
+    margin-right: 20px;
+  }
+  .product-table-line {
+    width: 200px;
+    margin-right: 10px;
+  }
+  .product-table-name {
+    margin: 0;
+  }
+  .product-table-data {
+    margin: 0;
+  }
 }

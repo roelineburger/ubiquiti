@@ -118,3 +118,24 @@ svg.MuiSvgIcon-root :hover {
   position: relative;
   align-items: center;
 }
+
+@media screen and (max-width: 600px) {
+  .search-input {
+    width: 100px;
+  }
+
+  .search {
+    padding-left: 8px;
+  }
+
+  .toolbar-filter-text {
+    margin-right: 16px;
+  }
+
+  .toolbar-filter-popup {
+    right: 8px;
+  }
+  .toolbar-filter-popup-x {
+    right: 8px;
+  }
+}

@@ -10,6 +10,7 @@
   background-color: var(--Neutral2);
   color: var(--Neutral8);
   height: 53px;
+  width: auto;
 }
 
 .header-logo {
@@ -26,4 +27,10 @@
   font-weight: 400;
   font-size: 14px;
   margin-right: 32px;
+}
+
+@media screen and (max-width: 600px) {
+  .header-author {
+    margin-right: 16px;
+  }
 }

@@ -51,3 +51,19 @@
 .card-container-content-line {
   font-size: 12px;
 }
+
+@media screen and (max-width: 600px) {
+  .cards-container {
+    margin: 8px;
+    gap: 10px;
+  }
+
+  .card {
+    width: 40%;
+  }
+
+  .card-container-content {
+    justify-content: center;
+    padding-left: 10px;
+  }
+}
