@@ -34,8 +34,8 @@
 }
 
 .device-image {
-  width: 257px;
   height: 257px;
+  margin-right: 32px;
 }
 
 .device-container {
@@ -46,7 +46,8 @@
   width: 60%;
   position: absolute;
   top: 50%;
-  transform: translate(28%, -50%);
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .device-feature-name {
@@ -67,11 +68,17 @@
     flex-direction: column;
   }
   .device-image {
-    width: 100px;
-    height: 100px;
+    height: 200px;
+    margin-right: 0;
+    margin-bottom: 32px;
   }
-
+  .device-content {
+    width: 100%;
+  }
   .back-icon {
     padding-left: 16px;
+  }
+  .device-container {
+    width: 80%;
   }
 }

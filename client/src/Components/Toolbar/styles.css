@@ -90,6 +90,7 @@ svg.MuiSvgIcon-root :hover {
   top: 0;
   right: 0;
   color: var(--Neutral8);
+  padding-bottom: 16px;
 }
 
 .toolbar-filter-popup-filter {
@@ -98,7 +99,7 @@ svg.MuiSvgIcon-root :hover {
   font-weight: 400;
   font-size: 14px;
   border-bottom: solid var(--Neutral3) 1px;
-  padding: 0 15px 6px 15px;
+  padding: 0 15px 14px 15px;
 }
 
 .toolbar-filter-popup-productline {
@@ -110,7 +111,7 @@ svg.MuiSvgIcon-root :hover {
 
 .toolbar-filter-popup-x {
   position: absolute;
-  right: 0;
+  right: 16px;
 }
 
 .toolbar-toggle {
@@ -133,7 +134,7 @@ svg.MuiSvgIcon-root :hover {
   }
 
   .toolbar-filter-popup {
-    right: 8px;
+    right: 0;
   }
   .toolbar-filter-popup-x {
     right: 8px;

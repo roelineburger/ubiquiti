@@ -11,7 +11,9 @@ const App = () => {
 
   useEffect(() => {
     const getDevices = async () => {
-      const query = await fetch("http://localhost:4000/devices");
+      const query = await fetch(
+        "https://static.ui.com/fingerprint/ui/public.json"
+      );
       const json = await query.json();
       setDevices(json.devices);
     };

@@ -13,6 +13,7 @@ const TableViewItem = ({ device }: TableViewItemProps) => {
       <div className="tableview">
         <div className="tableview-device">
           <img
+            alt="device"
             className="tableview-device-img"
             src={`https://static.ui.com/fingerprint/ui/icons/${device.icon.id}_51x51.png`}
           />

@@ -30,6 +30,7 @@ const DeviceDetails = ({ devices }: DeviceProps) => {
           </div>
           <div className="device-container">
             <img
+              alt="device"
               className="device-image"
               src={`https://static.ui.com/fingerprint/ui/icons/${device.icon.id}_257x257.png`}
             />

@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from "react";
+import React from "react";
 import "./styles.css";
 import FilterPopUp from "../FilterPopUp";
 import FormatListBulletedIcon from "@mui/icons-material/FormatListBulleted";
