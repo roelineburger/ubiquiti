@@ -5,6 +5,7 @@ import Toolbar from "../Toolbar";
 import TableView from "../TableView";
 import CardView from "../CardView";
 import { Device } from "../../Interfaces";
+import useFilteredDevices from "./useFilteredDevices";
 
 interface DeviceListProps {
   devices: Device[];
@@ -40,19 +41,11 @@ const DeviceList = ({ devices }: DeviceListProps) => {
     }
   };
 
-  const filteredDevices = useMemo(() => {
-    return devices.filter((device) => {
-      if (
-        selectedProductLines.length > 0 &&
-        selectedProductLines.indexOf(device.line.name) === -1
-      ) {
-        return false;
-      }
-      return (
-        device.product.name.toLowerCase().indexOf(searchTerm.toLowerCase()) > -1
-      );
-    });
-  }, [devices, searchTerm, selectedProductLines]);
+  const filteredDevices = useFilteredDevices({
+    devices,
+    selectedProductLines,
+    searchTerm,
+  });
 
   return (
     <div>

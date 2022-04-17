@@ -10,7 +10,9 @@ const Header = () => {
         <img className="header-logo" src={logo} alt="logo" />
       </Link>
       <h1 className="header-devices">Devices</h1>
-      <h1 className="header-author">Roeline Burger</h1>
+      <h1 className="header-author" data-testid="author">
+        Roeline Burger
+      </h1>
     </div>
   );
 };

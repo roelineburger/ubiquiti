@@ -32,8 +32,8 @@ const Toolbar = ({
     <div className="toolbar">
       <div className="search">
         <div className="search-inner">
-          <div className="search-icon">
-            <SearchIcon />
+          <div className="search-icon" data-testid="toolbar">
+            <SearchIcon data-testid="search-icon" />
           </div>
           <input
             className="search-input"
@@ -41,6 +41,7 @@ const Toolbar = ({
             placeholder="Search"
             onChange={(e) => setSearchTerm(e.target.value)}
             value={searchTerm}
+            data-testid="input-box"
           />
           <div className="search-clear">
             <CloseIcon onClick={clearSearch} />
@@ -52,7 +53,11 @@ const Toolbar = ({
           className="toolbar-list-icon"
           onClick={switchView}
         />
-        <GridViewIcon className="toolbar-grid-icon" onClick={switchView} />
+        <GridViewIcon
+          className="toolbar-grid-icon"
+          onClick={switchView}
+          data-testid="grid-icon"
+        />
         <FilterPopUp
           devices={devices}
           setSelectedProductLines={setSelectedProductLines}
