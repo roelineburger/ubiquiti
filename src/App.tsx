@@ -22,7 +22,7 @@ const App = () => {
 
   return (
     <div className="App">
-      <BrowserRouter>
+      <BrowserRouter basename="/ubiquiti">
         <Header />
         <Routes>
           <Route path="/" element={<DeviceList devices={devices} />} />

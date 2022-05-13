@@ -2,6 +2,7 @@
   "name": "client",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://roelineburger.github.io/ubiquiti/",
   "dependencies": {
     "@emotion/react": "^11.9.0",
     "@emotion/styled": "^11.8.1",
@@ -16,7 +17,6 @@
     "@types/react": "^17.0.44",
     "@types/react-dom": "^17.0.15",
     "gh-pages": "^3.2.3",
-    "homepage": "https://roelineburger.github.io/ubiquiti/",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
     "react-router-dom": "^6.3.0",
